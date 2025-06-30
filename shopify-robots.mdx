@@ -1,1 +1,113 @@
+{% for group in robots.default_groups -%}
+{{ group.user_agent }}
+
+{% for rule in group.rules -%}
+{{ rule }}
+{% endfor -%}
+
+{% if group.user_agent contains '*' -%}
+Disallow: /*.atom
+Disallow: /cart
+Disallow: /cart/update
+Disallow: /checkout
+Disallow: /account
+Disallow: /.well-known/
+Disallow: /apple-app-site-association
+Disallow: /*preview_theme_id
+Disallow: /*preview_script_id
+Disallow: /cdn/wpm/*.js
+Disallow: /*?variant=
+Disallow: /*&variant=
+Disallow: /*?currency=
+Disallow: /*&currency=
+Disallow: /*?*oseid=
+Disallow: /*&*oseid=
+Disallow: /*?srsltid=
+Disallow: /*&srsltid=
+Disallow: /policies/
+Disallow: /*/policies/
+Disallow: /*+*
+Disallow: /*%2B*
+Disallow: /*%2b*
+{% endif -%}
+
+{% if group.sitemap != blank -%}
+{{ group.sitemap }}
+{% endif -%}
+
+{% endfor -%}
+
+User-agent: Bingbot
+Crawl-delay: 10
+
+User-agent: Yandex
+Crawl-delay: 10
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: AhrefsSiteAudit
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: Screaming Frog SEO Spider
+Crawl-delay: 10
+
+User-agent: DotBot
+Crawl-delay: 10
+
+User-agent: ChatGPT-User
+Crawl-delay: 10
+
+User-agent: GPTBot
+Crawl-delay: 10
+
+User-agent: CCBot
+Crawl-delay: 10
+
+User-agent: Pinterest
+Crawl-delay: 1
+
+User-agent: PetalBot
+Crawl-delay: 10
+
+User-agent: Sogou Spider
+Crawl-delay: 10
+
+User-agent: Moz
+Crawl-delay: 10
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://___________/sitemap.xml
 
